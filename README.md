@@ -21717,16 +21717,16 @@ function openProviderPage(providerName) {
     <!-- Booking Confirmation Modal -->
     <div class="booking-confirmation-modal" id="bookingConfirmationModal">
       <div class="confirmation-content">
-        <div class="confirmation-icon">
+        <div class="confirmation-siren">
           <i class="fas fa-check-circle"></i>
         </div>
         <h3>Booking Confirmed!</h3>
         <p id="bookingConfirmationMessage">Your service booking has been confirmed successfully.</p>
         <div class="confirmation-actions">
-          <button class="view-receipt" onclick="viewBookingReceipt()">
+          <button class="slip-receipt" onclick="viewBookingReceipt()">
             <i class="fas fa-receipt"></i> View Details
           </button>
-          <button class="close-confirmation" onclick="closeBookingConfirmationModal()">
+          <button class="shut-confirmation" onclick="closeBookingConfirmationModal()">
             <i class="fas fa-times"></i> Close
           </button>
         </div>
@@ -23480,7 +23480,7 @@ function addProviderPageStyles() {
   background: linear-gradient(90deg, #4CAF50, #8BC34A);
 }
 
-.confirmation-icon {
+.confirmation-circle {
   width: 80px;
   height: 80px;
   background: #4CAF50;
@@ -23495,7 +23495,7 @@ function addProviderPageStyles() {
   position: relative;
 }
 
-.confirmation-icon::after {
+.confirmation-circle::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -23564,7 +23564,7 @@ function addProviderPageStyles() {
   gap: 12px;
 }
 
-.view-receipt, .close-confirmation {
+.slip-receipt, .shut-confirmation {
   flex: 1;
   padding: 14px;
   border-radius: 10px;
@@ -23578,35 +23578,35 @@ function addProviderPageStyles() {
   transition: all 0.3s ease;
 }
 
-.view-receipt {
+.slip-receipt {
   background: linear-gradient(to right, #4CAF50, #8BC34A);
   color: #fff;
   border: none;
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
 
-.view-receipt:hover {
+.slip-receipt:hover {
   background: linear-gradient(to right, #3d8b40, #7CB342);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
 }
 
-.view-receipt:active {
+.slip-receipt:active {
   transform: translateY(0);
 }
 
-.close-confirmation {
+.shut-confirmation {
   background: #f5f5f5;
   color: #333;
   border: 1px solid #e0e0e0;
 }
 
-.close-confirmation:hover {
+.shut-confirmation:hover {
   background: #e0e0e0;
   transform: translateY(-2px);
 }
 
-.close-confirmation:active {
+.shut-confirmation:active {
   transform: translateY(0);
 }
 
@@ -23625,7 +23625,7 @@ function addProviderPageStyles() {
   }
 }
 
-.confirmation-icon i {
+.confirmation-circle i {
   animation: checkmark 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -23639,7 +23639,7 @@ function addProviderPageStyles() {
     flex-direction: column;
   }
   
-  .view-receipt, .close-confirmation {
+  .slip-receipt, .shut-confirmation {
     width: 100%;
   }
 }
