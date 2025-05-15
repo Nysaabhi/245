@@ -21714,24 +21714,23 @@ function openProviderPage(providerName) {
       </div>
     </div>
     
-    <!-- Booking Confirmation Modal -->
-    <div class="booking-confirmation-modal" id="bookingConfirmationModal">
-      <div class="confirmation-content">
-        <div class="confirmation-siren">
-          <i class="fas fa-check-circle"></i>
-        </div>
-        <h3>Booking Confirmed!</h3>
-        <p id="bookingConfirmationMessage">Your service booking has been confirmed successfully.</p>
-        <div class="confirmation-actions">
-          <button class="slip-receipt" onclick="viewBookingReceipt()">
-            <i class="fas fa-receipt"></i> View Details
-          </button>
-          <button class="shut-confirmation" onclick="closeBookingConfirmationModal()">
-            <i class="fas fa-times"></i> Close
-          </button>
-        </div>
-      </div>
+<div class="happy-confirmation-modal" id="bookingConfirmationModal">
+  <div class="happy-content">
+    <div class="happy-siren">
+      <i class="fas fa-check-circle"></i>
     </div>
+    <h3>Booking Confirmed!</h3>
+    <p id="bookingConfirmationMessage">Your service booking has been confirmed successfully.</p>
+    <div class="happy-actions">
+      <button class="slip-receipt" onclick="viewBookingReceipt()">
+        <i class="fas fa-receipt"></i> View Details
+      </button>
+      <button class="shut-confirmation" onclick="closeBookingConfirmationModal()">
+        <i class="fas fa-times"></i> Close
+      </button>
+    </div>
+  </div>
+</div>
     
     <!-- Toast Notification -->
     <div class="toast"></div>
@@ -23430,8 +23429,7 @@ function addProviderPageStyles() {
   background: #ffc400;
 }
 
-/* Booking Confirmation Modal Styles */
-.booking-confirmation-modal {
+.happy-confirmation-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -23447,12 +23445,12 @@ function addProviderPageStyles() {
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.booking-confirmation-modal.active {
+.happy-confirmation-modal.active {
   opacity: 1;
   visibility: visible;
 }
 
-.confirmation-content {
+.happy-content {
   background: #fff;
   border-radius: 20px;
   width: 90%;
@@ -23466,11 +23464,11 @@ function addProviderPageStyles() {
   overflow: hidden;
 }
 
-.booking-confirmation-modal.active .confirmation-content {
+.happy-confirmation-modal.active .happy-content {
   transform: translateY(0);
 }
 
-.confirmation-content::before {
+.happy-content::before {
   content: '';
   position: absolute;
   top: 0;
@@ -23480,7 +23478,7 @@ function addProviderPageStyles() {
   background: linear-gradient(90deg, #4CAF50, #8BC34A);
 }
 
-.confirmation-circle {
+.happy-siren {
   width: 80px;
   height: 80px;
   background: #4CAF50;
@@ -23495,7 +23493,7 @@ function addProviderPageStyles() {
   position: relative;
 }
 
-.confirmation-circle::after {
+.happy-siren::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -23516,50 +23514,21 @@ function addProviderPageStyles() {
   }
 }
 
-.confirmation-content h3 {
+.happy-content h3 {
   margin: 0 0 15px;
   color: #333;
   font-size: 1.5em;
   font-weight: 600;
 }
 
-.confirmation-content p {
+.happy-content p {
   margin: 0 0 30px;
   color: #666;
   line-height: 1.6;
   font-size: 1.05em;
 }
 
-.confirmation-details {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 15px;
-  margin-bottom: 25px;
-  text-align: left;
-}
-
-.confirmation-details-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  font-size: 0.95em;
-}
-
-.confirmation-details-item:last-child {
-  margin-bottom: 0;
-}
-
-.confirmation-details-label {
-  color: #666;
-  font-weight: 500;
-}
-
-.confirmation-details-value {
-  color: #333;
-  font-weight: 600;
-}
-
-.confirmation-actions {
+.happy-actions {
   display: flex;
   gap: 12px;
 }
@@ -23610,7 +23579,6 @@ function addProviderPageStyles() {
   transform: translateY(0);
 }
 
-/* Animation for checkmark */
 @keyframes checkmark {
   0% {
     transform: scale(0);
@@ -23625,17 +23593,16 @@ function addProviderPageStyles() {
   }
 }
 
-.confirmation-circle i {
+.happy-siren i {
   animation: checkmark 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Responsive adjustments */
 @media (max-width: 480px) {
-  .confirmation-content {
+  .happy-content {
     padding: 30px 20px;
   }
   
-  .confirmation-actions {
+  .happy-actions {
     flex-direction: column;
   }
   
@@ -23704,7 +23671,7 @@ function addProviderPageStyles() {
   }
   
   .booking-cart-actions,
-  .confirmation-actions {
+  .happy-actions {
     flex-direction: column;
   }
   
@@ -27332,7 +27299,7 @@ function showChatSupport(detailName) {
       </button>
       <div class="header-title-wrapper">
         <h2 class="header-main-title">${detailName}</h2>
-        <div class="header-subtitle">Support Center</div>
+        <div class="support-subtitle">Support Center</div>
       </div>
     </div>
     <div class="chat-support-content">
@@ -27662,7 +27629,7 @@ function addChatSupportStyles() {
   text-overflow: ellipsis;
 }
 
-.header-subtitle {
+.support-subtitle {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.8rem;
   margin-top: 2px;
@@ -27902,12 +27869,12 @@ mark {
 /* Responsive adjustments */
 @media (min-width: 375px) {
   .header-main-title { font-size: 1.4rem; }
-  .header-subtitle { font-size: 0.85rem; }
+  .support-subtitle { font-size: 0.85rem; }
 }
 
 @media (min-width: 480px) {
   .header-main-title { font-size: 1.5rem; }
-  .header-subtitle { font-size: 0.9rem; }
+  .support-subtitle { font-size: 0.9rem; }
   .chat-support-header { padding: 16px 20px; }
 }
 
